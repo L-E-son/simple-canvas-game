@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"name": "deploy",
+			"path": "deploy"
+		},
+		{
+			"name": "src",
+			"path": "src"
+		}
+	],
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"type": "typescript",
+				"tsconfig": "tsconfig.json",
+				"option": "watch",
+				"problemMatcher": [
+					"$tsc-watch"
+				],
+				"group": "build",
+				"label": "tsc: watch - tsconfig.json"
+			},
+			{
+				"type": "typescript",
+				"tsconfig": "tsconfig.json",
+				"problemMatcher": [
+					"$tsc"
+				],
+				"group": "build",
+				"label": "tsc: build - tsconfig.json"
+			},
+			{
+				"type": "process",
+				"command": "python3",
+				"args": ["-m", "host.py"],
+				"problemMatcher": [],
+				"options": {
+					"cwd": "${fileWorkspaceFolder}\\deploy"
+				},
+				"group": "build",
+				"label": "python: SimpleHTTPServer"
+			}
+		]
+	}
+}
