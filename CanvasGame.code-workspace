@@ -32,12 +32,12 @@
 				"label": "tsc: build - tsconfig.json"
 			},
 			{
-				"type": "process",
+				"type": "shell",
 				"command": "python3",
 				"args": ["-m", "host.py"],
 				"problemMatcher": [],
 				"options": {
-					"cwd": "${fileWorkspaceFolder}\\deploy"
+					"cwd": "${workspaceFolder}"
 				},
 				"group": "build",
 				"label": "python: SimpleHTTPServer"
